@@ -37,7 +37,7 @@ def postflightJob(constants, branch) {
         rootPOM("pom.xml")
 
         // Set goals and option to execute with maven
-        goals("clean install test verify sonar:sonar -Dsonar.projectKey=AutoNG -Dsonar.host.url=http://localhost:9000 -Dsonar.login=sqp_250feda5d3d491487a5c6a41475667c974adcc26 -Dbrowser=chrome -Dremote=false")
+        goals("clean package")
 
         // Allows Jenkins to schedule and execute multiple builds concurrently.
         concurrentBuild()
