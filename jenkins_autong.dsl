@@ -9,7 +9,7 @@ def branches = branchesParam ? branchesParam.split(' ') : ['1.0.0', '1.0.0-SNAPS
 // generic params
 def constants = [
 project: 'AutoNG',
-component: 'DSL',
+component: '(QA Fiction)',
 branches: branches,
 name: 'AutoNG',
 label: '',
@@ -95,29 +95,7 @@ scm('* H * * *')
 
 // Allows to publish archive artifacts
 publishers {
-archiveArtifacts('target/**/*')
-archiveTestNG('**/target/*.xml') {
-escapeTestDescription()
-escapeExceptionMessages(false)
-showFailedBuildsInTrendGraph()
-markBuildAsUnstableOnSkippedTests(true)
-markBuildAsFailureOnFailedConfiguration(true)
-            }
-extendedEmail {
-defaultSubject('$DEFAULT_SUBJECT')
-defaultContent('$DEFAULT_CONTENT')
-contentType('text/html')
-triggers {
-always {
-subject('$PROJECT_DEFAULT_SUBJECT')
-content('$PROJECT_DEFAULT_CONTENT')
-contentType('text/html')
-sendTo {
-recipientList('shwetank.vashishtha@qa-fiction.com')
+archiveArtifacts('**/target/*.jar')
 }
-                    }
-                }
-            }
-        }
-    }
+}
 }
