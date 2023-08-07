@@ -4,14 +4,14 @@
  */
 
 def branchesParam = binding.variables.get('BRANCHES')
-def branches = branchesParam ? branchesParam.split(' ') : ['QA', 'DEV']
+def branches = branchesParam ? branchesParam.split(' ') : ['1.0.0', '1.0.0-SNAPSHOT']
 
 // generic params
 def constants = [
 project: 'AutoNG',
 component: 'DSL',
 branches: branches,
-name: 'OrangeHRM',
+name: 'AutoNG',
 label: '',
 username: ''
 ]
