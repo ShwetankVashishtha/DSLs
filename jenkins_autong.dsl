@@ -56,13 +56,13 @@ artifactNumToKeep(50)
 numToKeep(50)
 }
 
-// Block any upstream and downstream projects while building current project
-configure {
-def aNode = it
-def anotherNode = aNode / 'blockBuildWhenDownstreamBuilding'
-anotherNode.setValue('true')
-(it / 'blockBuildWhenUpstreamBuilding').setValue('true')
-}
+//// Block any upstream and downstream projects while building current project
+//configure {
+//def aNode = it
+//def anotherNode = aNode / 'blockBuildWhenDownstreamBuilding'
+//anotherNode.setValue('true')
+//(it / 'blockBuildWhenUpstreamBuilding').setValue('true')
+//}
 
 // Adds pre/post actions to the job.
 wrappers {
