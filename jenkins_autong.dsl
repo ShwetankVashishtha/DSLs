@@ -90,7 +90,7 @@ timeout(10)
 
 triggers {
 configure { it / 'triggers' / 'com.cloudbees.jenkins.GitHubPushTrigger' / 'spec' }
-scm('* H * * *')
+scm('* * * * *')
 }
 
 // Allows to publish archive artifacts
